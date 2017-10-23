@@ -95,3 +95,5 @@ unalias imgcat
 # Oh, let's put some aliases up there as well. They're always good to have.
 alias pat='php /Users/brekitomasson/Dropbox/Text/Sites/BarrelScraper/artisan tinker'
 alias pa='php /Users/brekitomasson/Dropbox/Text/Sites/BarrelScraper/artisan'
+
+export PATH="/usr/local/sbin:$PATH"
