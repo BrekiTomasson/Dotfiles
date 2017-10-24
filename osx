@@ -1,0 +1,154 @@
+#!/bin/bash
+
+# OSX special settings, customized and personalized. Hidden options I'm not using.
+# See originals at https://raw.github.com/mathiasbynens/dotfiles/master/.osx
+
+# ... First we kill the System Preferences window so we don't accidentally override any of the changes we're
+# going to be making.
+osascript -e 'tell application "System Preferences" to quit'
+
+# ... Also, we grab the admin password so that we're in the right place.
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until we're done.
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# ... Set standby delay to 24 hours (default is 1 hour)
+sudo pmset -a standbydelay 86400
+
+# ... Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+# ... Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs) (default: not set).
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# ... Enable subpixel font rendering on non-Apple LCDs (default: not set).
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
+# ... Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+
+# ... Automatically hide and show the Dock (default: false).
+defaults write com.apple.dock autohide -bool true
+
+# ... Make Dock icons of hidden applications translucent (default: false).
+defaults write com.apple.dock showhidden -bool true
+
+# ... Show all filename extensions in Finder (default: false).
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# ... Expand save panel (default: false).
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# ... Disable shadow in screenshots (default: false).
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# ... Enable highlight hover effect for the grid view of a stack (default: false).
+defaults write com.apple.dock mouse-over-hilte-stack -bool true
+
+# ... Show indicator lights for open applications in the Dock (default: false).
+defaults write com.apple.dock show-process-indicators -bool true
+
+# ... Don’t animate opening applications from the Dock (default: true).
+defaults write com.apple.dock launchanim -bool false
+
+# ... Set a blazingly fast keyboard repeat rate (default: 60).
+defaults write NSGlobalDomain KeyRepeat -int 0
+
+# Expand the following File Info panes: “General”, “Open with”, and “Sharing & Permissions”
+defaults write com.apple.finder FXInfoPanesExpanded -dict \
+	General -bool true \
+	OpenWith -bool true \
+	Privileges -bool true
+
+# ... Enable highlight hover effect for the grid view of a stack (Dock)
+defaults write com.apple.dock mouse-over-hilite-stack -bool true
+
+# ... Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# ... Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
+
+# ... Finder: disable window animations and Get Info animations
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+# ... Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# ... Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# ... Disable Resume system-wide
+defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
+
+# ... Disable auto-correct (default: true).
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# ... Display full POSIX path as Finder window title (default: false).
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Enable the debug menu in Address Book
+defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# Enable the debug menu in iCal (pre-10.8)
+defaults write com.apple.iCal IncludeDebugMenu -bool true
+
+# ... Increase window resize speed for Cocoa applications (default: not set).
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
+# ... Avoid creating .DS_Store files on network volumes (default: false).
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# ... Disable the warning when changing a file extension (default: true).
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Enable the automatic update check
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+# Turn on app auto-update
+defaults write com.apple.commerce AutoUpdate -bool true
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Download newly available updates in background
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+
+# Install System data files & security updates
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+
+# ... Show item info below desktop icons (default false).
+/usr/libexec/PlistBuddy \
+ -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" \
+ ~/Library/Preferences/com.apple.finder.plist
+
+# ... Disable the warning before emptying the Trash (default: true).
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# ... Empty Trash securely (default: false).
+defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+# ... Require password immediately after sleep or screen saver begins.
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# ... Disable Safari’s thumbnail cache for History and Top Sites
+defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
+
+# ... Disable the Ping sidebar in iTunes (default: false).
+defaults write com.apple.iTunes disablePingSidebar -bool true
+
+# ... Disable all the other Ping stuff in iTunes (default: false).
+defaults write com.apple.iTunes disablePing -bool true
+
+# ... Reset Launchpad.
+[ -e ~/Library/Application\ Support/Dock/*.db ] && rm ~/Library/Application\ Support/Dock/*.db
+
+# ... Show the ~/Library folder (default: hidden).
+chflags nohidden ~/Library
+
+# ... Kill affected applications
+for app in Safari Finder Dock Mail SystemUIServer; do
+  killall "$app" >/dev/null 2>&1;
+done

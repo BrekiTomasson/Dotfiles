@@ -1,0 +1,112 @@
+[user]
+	name = Breki Tomasson
+	email = breki.tomasson@gmail.com
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	autocrlf = input
+	editor = nano
+	excludesfile = ~/.gitignore_global
+	legacyheaders = false
+	safecrlf = true
+	whitespace = trailing-space,space-before-tab
+[web]
+	browser = google-chrome
+[push]
+	default = simple
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[alias]
+	a = add --all
+	aliases = config --get-regexp alias
+	branches = branch -a
+	c = commit
+	ca = commit -a
+	cad = commit -a --amend
+	cam = commit -am
+	cm = commit -m
+	d = diff
+	dc = diff --cached
+	dck = diff --cached --check
+	dk = diff --check
+	dp = diff --patience
+	hist = hist = log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+	l = log --oneline
+	ld = log --graph --decorate --abbrev-commit --pretty=oneline -n 20
+	lg = log --oneline --graph --decorate
+	ls = ls-files
+	lsf = !git ls-files | grep -i
+	pb = pull rebase
+	pl = pull
+	ps = push
+	psf = push -f
+	pso = push origin
+	psom = push origin master
+	psu = push -u
+	r = remote
+	rb = rebase
+	re = reset
+	remotes = remote -v
+	s = status -s
+	tags = tag -l
+	unadd = reset --mixed
+	uncommit = reset --soft
+	undo = reset --hard
+	unstage = reset
+	w = show
+	wp = show -p
+	#######################
+	subadd = !sh -c 'git submodule add git://github.com/$1 $2/$(basename $1)' -
+	subup = submodule update --init --recursive
+	subpull = !git submodule foreach git pull --tags origin master
+	#######################
+	assume = update-index -assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = !git ls -v | grep ^h | cut -c 3-
+	unassumeall = !git assumed | xargs git unassume
+	assumeall = !git status -s | awk {'print $2'} | xargs git assume
+  #######################
+	bump = !sh -c 'git commit -am \"Version bump v$1\" && git push origin $(git bc) && git release $1' -
+	release = !sh -c 'git tag v$1 && git push --tags' -
+	aliases = !git config -l | grep alias | cut -c 7-
+	snap = !git stash save 'snapshot: $(date)' && git stash apply 'stash@{0}'
+	bare = !sh -c 'git symbolic-ref HEAD refs/heads/$1 && git rm --cached -r . && git clean -xfd' -
+	whois = !sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -
+	serve = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+	#############
+	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -
+	human = name-rev --name-only --refs=refs/heads/*
+[url "git://github.com/"]
+	insteadOf = hub:
+[url "git@github.com:brekitomasson/"]
+	insteadOf = myhub:
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
