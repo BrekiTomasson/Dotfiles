@@ -1,6 +1,36 @@
 {
-    "\UF729"  = "moveToBeginningOfLine:";
-    "\UF72B"  = "moveToEndOfLine:";
-    "$\UF729" = "moveToBeginningOfLineAndModifySelection:";
-    "$\UF72B" = "moveToEndOfLineAndModifySelection:";
+
+  /* Homewards Bound */
+
+  "\UF729"   = "moveToBeginningOfLine:";                         /* Home                         */
+  "@\UF729"  = "moveToBeginningOfDocument:";                     /* Cmd + Home                   */
+  "~@\UF702" = "moveToBeginningOfDocument:";                     /* Cmd + Option + Left Arrow    */
+  "$\UF729"  = "moveToBeginningOfLineAndModifySelection:";       /* Shift + Home                 */
+  "$~\UF702" = "moveToBeginningOfLineAndModifySelection:";       /* Shift + Option + Left Arrow  */
+  "@$\UF729" = "moveToBeginningOfDocumentAndModifySelection:";   /* Cmd + Shift + Home           */
+
+  /* This is the End */
+
+  "\UF72B"   = "moveToEndOfLine:";                               /* End                          */
+  "@\UF72B"  = "moveToEndOfDocument:";                           /* Cmd + End                    */
+  "~@\UF703" = "moveToEndOfDocument:";                           /* Cmd + Option + Right Arrow   */
+  "$\UF72B"  = "moveToEndOfLineAndModifySelection:";             /* Shift + End                  */
+  "$~\UF703" = "moveToEndOfLineAndModifySelection:";             /* Shift + Option + Right Arrow */
+  "@$\UF72B" = "moveToEndOfDocumentAndModifySelection:";         /* Cmd + Shift + End            */
+
+  /* ... and some other things that are useful */
+
+  "^c"       = "copy:";                                        /* Ctrl + C     */
+  "$\UF728"  = "cut:";                                         /* Shift + Del  */
+  "^x"       = "cut:";                                         /* Ctrl + X     */
+  "$\UF727"  = "paste:";                                       /* Shift + Ins  */
+  "^v"       = "paste:";                                       /* Ctrl + V     */
+
+  /* Specific character replacements */
+
+  "~<" = ("insertText:", "|");  /* Opt + <  =  Pipe symbol       */
+  "~+" = ("insertText:", "\\"); /* Opt + +  =  Backslash         */
+  "~ö" = ("insertText:", "{");  /* Opt + ö  =  Left curly brace  */
+  "~ä" = ("insertText:", "}");  /* Opt + ä  =  Right curly brace */
+
 }

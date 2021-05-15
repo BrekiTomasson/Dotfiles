@@ -1,0 +1,3 @@
+DefaultKeyBinding.dict  =>  /Users/brekitomasson/Library/KeyBindings/DefaultKeyBinding.dict
+fish  =>  /Users/brekitomasson/.config/fish
+bat  =>  /Users/brekitomasson/.config/bat

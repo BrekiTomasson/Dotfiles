@@ -81,6 +81,7 @@ addfile() {
 			mv "${_original_file}" "${DOTFILEDIR}"
 			printf "."
 			ln -s "${_tracked_file}" "${_original_file}"
+			echo "${_file_basename}  =>  ${_original_file}" >> "${DOTFILEDIR}/../maps.txt"
 			printf ". Done!\\n"
 		fi
 

@@ -1,0 +1,82 @@
+include /usr/local/share/nano-syntax-highlighting/Dockerfile.nanorc
+include /usr/local/share/nano-syntax-highlighting/conf.nanorc
+include /usr/local/share/nano-syntax-highlighting/css.nanorc
+include /usr/local/share/nano-syntax-highlighting/csv.nanorc
+include /usr/local/share/nano-syntax-highlighting/dot.nanorc
+include /usr/local/share/nano-syntax-highlighting/dotenv.nanorc
+include /usr/local/share/nano-syntax-highlighting/fish.nanorc
+include /usr/local/share/nano-syntax-highlighting/git.nanorc
+include /usr/local/share/nano-syntax-highlighting/html.nanorc
+include /usr/local/share/nano-syntax-highlighting/java.nanorc
+include /usr/local/share/nano-syntax-highlighting/javascript.nanorc
+include /usr/local/share/nano-syntax-highlighting/js.nanorc
+include /usr/local/share/nano-syntax-highlighting/json.nanorc
+include /usr/local/share/nano-syntax-highlighting/makefile.nanorc
+include /usr/local/share/nano-syntax-highlighting/markdown.nanorc
+include /usr/local/share/nano-syntax-highlighting/nanorc.nanorc
+include /usr/local/share/nano-syntax-highlighting/nginx.nanorc
+include /usr/local/share/nano-syntax-highlighting/php.nanorc
+include /usr/local/share/nano-syntax-highlighting/properties.nanorc
+include /usr/local/share/nano-syntax-highlighting/sh.nanorc
+include /usr/local/share/nano-syntax-highlighting/sql.nanorc
+include /usr/local/share/nano-syntax-highlighting/toml.nanorc
+include /usr/local/share/nano-syntax-highlighting/xml.nanorc
+include /usr/local/share/nano-syntax-highlighting/yaml.nanorc
+
+# Nano configuration file
+
+# ... auto indent stuff.
+set autoindent
+
+# ... don't create backup files under filename~.
+unset backup
+
+# ... let's set up a dedicated backup directory instead.
+set backupdir ~/.backup/
+
+# ... use bold text instead of reverse video text.
+set boldtext
+
+# ... set the characters treated as closing brackets when justifying paragraphs.
+# They cannot contain blank characters.
+set brackets string ""')>]}"
+
+# ... do case sensitive searches by default.
+set casesensitive
+
+# ... Wrap lines at column number n. If n is 0 or less, the maximum line length will
+# be the screen width less n columns. The default value is -8.
+set fill -15
+
+# ... enable ~/.nano_history for saving and reading search/replace strings.
+set historylog
+
+# ... set the opening and closing brackets that can be found by bracket searches.
+set matchbrackets string "(<[{)>]}"
+
+# ... disable mouse support.
+unset mouse
+
+# ... allow inserting files into their own buffers.
+set multibuffer
+
+# ... don't do quick statusbar blanking.
+unset quickblank
+
+# ... Don'ti interpret the Delete key differently
+unset rebinddelete
+
+# ... Don't do extended regular expression searches by default.
+unset regexp
+
+# ... Make the Home key smarter.
+set smarthome
+
+# ... Allow nano to be suspended.
+set suspend
+
+# ... Use a tab size of 2 columns.
+set tabsize 2
+
+# ... Do not treat punctuation characters as part of a word.
+unset wordbounds

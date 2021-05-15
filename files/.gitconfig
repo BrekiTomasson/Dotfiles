@@ -11,16 +11,22 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	autocrlf = input
-	editor = nano
+	autocrlf = false
+	editor = $EDITOR
+	ignorecase = false
 	excludesfile = ~/.gitignore_global
 	legacyheaders = false
 	safecrlf = true
 	whitespace = trailing-space,space-before-tab
+	autolf = true
+	eol = lf
 [web]
 	browser = google-chrome
 [push]
-	default = simple
+	default = current
+[pull]
+  default = current
+  ff = only
 [color]
 	ui = auto
 [color "branch"]
@@ -51,10 +57,12 @@
 	dck = diff --cached --check
 	dk = diff --check
 	dp = diff --patience
-	hist = hist = log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+	dom = diff origin/master
+	hist = log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen%cd %C(red)%aN%Creset' --date=format:'%a %d %b %Y %H:%M:%S'
 	l = log --oneline
 	ld = log --graph --decorate --abbrev-commit --pretty=oneline -n 20
 	lg = log --oneline --graph --decorate
+	lp = log -p
 	ls = ls-files
 	lsf = !git ls-files | grep -i
 	pb = pull rebase
@@ -76,17 +84,13 @@
 	unstage = reset
 	w = show
 	wp = show -p
-	#######################
+
+  # Subrepo-stuff
 	subadd = !sh -c 'git submodule add git://github.com/$1 $2/$(basename $1)' -
 	subup = submodule update --init --recursive
 	subpull = !git submodule foreach git pull --tags origin master
-	#######################
-	assume = update-index -assume-unchanged
-	unassume = update-index --no-assume-unchanged
-	assumed = !git ls -v | grep ^h | cut -c 3-
-	unassumeall = !git assumed | xargs git unassume
-	assumeall = !git status -s | awk {'print $2'} | xargs git assume
-  #######################
+
+  # Releases, patches, etc.
 	bump = !sh -c 'git commit -am \"Version bump v$1\" && git push origin $(git bc) && git release $1' -
 	release = !sh -c 'git tag v$1 && git push --tags' -
 	aliases = !git config -l | grep alias | cut -c 7-
@@ -94,13 +98,8 @@
 	bare = !sh -c 'git symbolic-ref HEAD refs/heads/$1 && git rm --cached -r . && git clean -xfd' -
 	whois = !sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -
 	serve = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
-	#############
-	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
-	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
-	subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -
-	human = name-rev --name-only --refs=refs/heads/*
+
 [url "git://github.com/"]
 	insteadOf = hub:
 [url "git@github.com:brekitomasson/"]
 	insteadOf = myhub:
-
