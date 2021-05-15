@@ -17,6 +17,9 @@ set -gx PATH node_modules/.bin $PATH
 # PHP
 set -gx PATH vendor/bin $PATH
 
+# Java
+set -x PATH /usr/local/opt/openjdk@11/bin $PATH
+
 # Add my Script-folder to the path.
 set -x PATH $PATH $HOME/Scripts
 
