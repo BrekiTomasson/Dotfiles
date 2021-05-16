@@ -1,3 +1,4 @@
-function md --description "Create, and then change to, a new directory"
-  mkdir -p "$argv"; cd "$argv"
+function md -d "create and then change to a directory"
+  mkdir -p $argv[1]
+   and cd $argv[1]
 end

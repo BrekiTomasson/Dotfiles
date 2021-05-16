@@ -1,5 +1,2 @@
---theme="1337"
---style="full"
---italic-text=always
---force-colorization
---tabs=4
+--theme="Dracula"
+-n

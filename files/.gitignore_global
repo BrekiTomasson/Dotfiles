@@ -1,2 +1,24 @@
+# OS/System Things etc.
 *~
+.svn
 .DS_Store
+.DS_Store?
+.svn
+.env
+*._*
+*.phar
+*.cache
+*.swp
+*.orig
+*.idea
+dump.rdb
+main.tfvars
+Thumbs.db
+
+# IDE things
+.idea
+.vscode
+
+# Package managers
+node_modules
+vendor

@@ -1,3 +1,5 @@
 DefaultKeyBinding.dict  =>  /Users/brekitomasson/Library/KeyBindings/DefaultKeyBinding.dict
 fish  =>  /Users/brekitomasson/.config/fish
 bat  =>  /Users/brekitomasson/.config/bat
+starship.toml  =>  /Users/brekitomasson/.config/starship.toml
+htop  =>  /Users/brekitomasson/.config/htop
