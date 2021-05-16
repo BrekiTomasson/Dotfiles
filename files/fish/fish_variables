@@ -24,6 +24,7 @@ SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_cx:chmod\x20\x2bx
 SETUVAR _fish_abbr_d:docker
 SETUVAR _fish_abbr_dig:dog
+SETUVAR _fish_abbr_doc:docker\x2dcompose
 SETUVAR _fish_abbr_find:fd
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add

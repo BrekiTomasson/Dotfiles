@@ -4,6 +4,7 @@ if command -qa docker
 
   # Set an alias
   abbr -a d docker
+  abbr -a doc docker-compose
 
   function docker-cp -d "Pull, retag, and push a docker image"
     docker pull $argv[1]

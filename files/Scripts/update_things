@@ -1,0 +1,26 @@
+#!/usr/bin/env fish
+
+echo "Updating ..."
+
+echo "- Brew"
+# Homebrew
+brew update
+brew upgrade
+brew cleanup
+
+echo "- Fish shell"
+fish_update_completions
+
+echo "- Composer"
+composer global update
+
+echo "- NPM"
+npm update -g
+
+echo "- Apple Updates"
+/usr/sbin/softwareupdate -ia
+
+echo "- Fisher plugins"
+fisher update
+
+exit 0

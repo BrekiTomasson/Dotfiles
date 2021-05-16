@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git show-ref --verify refs/tags/"$1" && git tag -d "$1"
+git show-ref --verify refs/heads/"$1" && git branch -D "$1"
+git push origin :"$1"

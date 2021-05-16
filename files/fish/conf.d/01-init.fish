@@ -1,10 +1,10 @@
-# ======================================
-# ==  Various things to run on init!  ==
-# ==                                  ==
-# == Mainly related to locales, shell ==
-# == defaults, paths and other things ==
-# == like that.                       ==
-# ======================================
+####################################
+#  Various things to run on init!  #
+#                                  #
+# Mainly related to locales, shell #
+# defaults, paths and other things #
+# like that.                       #
+####################################
 
 # Remove the default greeting.
 set fish_greeting ""
