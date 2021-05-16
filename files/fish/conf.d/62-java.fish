@@ -3,7 +3,7 @@
 #############################
 
 # Use OpenJDK 11 as system-default Java.
-set -a PATH /usr/local/opt/openjdk@11/bin
+set -p PATH /usr/local/opt/openjdk@11/bin
 
 # Defaults
 set -x JAVA_OPTS '-Dswank.encoding=utf-8-unix'

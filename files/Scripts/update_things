@@ -4,9 +4,8 @@ echo "Updating ..."
 
 echo "- Brew"
 # Homebrew
-brew update
-brew upgrade
-brew cleanup
+brew-bump
+brew-cleanup
 
 echo "- Fish shell"
 fish_update_completions
@@ -22,5 +21,3 @@ echo "- Apple Updates"
 
 echo "- Fisher plugins"
 fisher update
-
-exit 0
