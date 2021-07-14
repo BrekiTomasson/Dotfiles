@@ -25,6 +25,11 @@
   autolf = true
   eol = lf
 	pager = delta
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
 [web]
   browser = google-chrome
 [push]
@@ -42,7 +47,6 @@
 [url "git@github.com:brekitomasson/"]
   insteadOf = myhub:
 [credential]
-  elper = osxkeychain
 	helper = osxkeychain
 [merge]
 	tool = vscode
@@ -56,6 +60,12 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
 	syntax-theme = Dracula
 	line-numbers = true
 	decorations = true
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none

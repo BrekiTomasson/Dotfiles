@@ -2,11 +2,11 @@
 #  Java Options & Defaults  #
 #############################
 
-# Use OpenJDK 11 as system-default Java.
-set -p PATH /usr/local/opt/openjdk@11/bin
+# Prepend Homebrew Java's path to $PATH
+set -p PATH /usr/local/opt/java/bin/
 
 # Defaults
-set -x JAVA_OPTS '-Dswank.encoding=utf-8-unix'
+set -x _JAVA_OPTIONS '-Dswank.encoding=utf-8-unix -Xms1024M -Xmx8196M'
 
 # Set Maven alias
 if command -qs mvn
