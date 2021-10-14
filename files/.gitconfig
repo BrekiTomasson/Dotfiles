@@ -1,71 +1,92 @@
 [user]
-  name = Breki Tomasson
   email = breki.tomasson@gmail.com
+  name = Breki Tomasson
+
 [log]
   showSignature = false
+
 [filter "media"]
-  required = true
   clean = git media clean %f
-  smudge = git media smudge %f
-[filter "lfs"]
   required = true
+  smudge = git media smudge %f
+
+[filter "lfs"]
   clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
+  required = true
+  smudge = git-lfs smudge -- %f
+
 [core]
-  autocrlf = false
-  editor = $EDITOR
+  autocrlf = input
   compression = -1
-  ignorecase = false
+  editor = $EDITOR
+  eol = lf
   excludesfile = ~/.gitignore_global
+  ignorecase = false
   legacyheaders = false
+	pager = delta
+  precomposeunicode = true
   safecrlf = true
   whitespace = trailing-space,space-before-tab
-  precomposeunicode = true
-  autolf = true
-  eol = lf
-	pager = delta
+
 [pager]
   diff = delta
   log = delta
   reflog = delta
   show = delta
+
 [web]
   browser = google-chrome
+
 [push]
   default = simple
+
 [pull]
   default = current
   ff = only
+
 [color]
-  ui = true
+  branch = auto
   diff = auto
   status = auto
-  branch = auto
+  ui = true
+
 [url "git://github.com/"]
   insteadOf = hub:
+
 [url "git@github.com:brekitomasson/"]
   insteadOf = myhub:
+
 [credential]
 	helper = osxkeychain
+
 [merge]
 	tool = vscode
+
 [mergetool "vscode"]
 	cmd = "code --wait "
+
 [grep]
   extendRegexp = true
   lineNumber = true
+
 [submodule]
   fetchJobs = 4
+
 [interactive]
 	diffFilter = delta --color-only
+
 [delta]
-  features = side-by-side line-numbers decorations
-  whitespace-error-style = 22 reverse
-	syntax-theme = Dracula
-	line-numbers = true
 	decorations = true
+  features = side-by-side line-numbers decorations
+	line-numbers = true
+	syntax-theme = Dracula
+  whitespace-error-style = 22 reverse
+
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul
-  file-style = bold yellow ul
   file-decoration-style = none
+  file-style = bold yellow ul
+
+[init]
+  defaultBranch = master
