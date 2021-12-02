@@ -48,6 +48,11 @@ SETUVAR _fish_abbr_gs:git\x20status\x20\x2dsb
 SETUVAR _fish_abbr_gw:git\x20switch
 SETUVAR _fish_abbr_gwc:git\x20switch\x20\x2dc
 SETUVAR _fish_abbr_mvnci:mvn\x20clean\x20install
+SETUVAR _fisher_danhper_2F_fish_2D_ssh_2D_agent_files:/Users/brekitomasson/\x2econfig/fish/functions/__ssh_agent_is_started\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/__ssh_agent_start\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/conf\x2ed/fish\x2dssh\x2dagent\x2efish
+SETUVAR _fisher_jethrokuan_2F_z_files:/Users/brekitomasson/\x2econfig/fish/functions/__z\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/__z_add\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/__z_clean\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/__z_complete\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/conf\x2ed/z\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fish_2D_bax_files:/Users/brekitomasson/\x2econfig/fish/functions/replay\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/completions/replay\x2efish
+SETUVAR _fisher_markcial_2F_upto_files:/Users/brekitomasson/\x2econfig/fish/functions/upto\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/completions/upto\x2efish
+SETUVAR _fisher_plugins:jethrokuan/z\x1ejorgebucaran/fish\x2dbax\x1edanhper/fish\x2dssh\x2dagent\x1emarkcial/upto
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red

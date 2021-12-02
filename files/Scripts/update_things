@@ -11,6 +11,7 @@ echo "- Fish shell"
 fish_update_completions
 
 echo "- Composer"
+composer self-update
 composer global update
 
 echo "- NPM"
