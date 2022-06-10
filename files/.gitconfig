@@ -24,7 +24,7 @@
   excludesfile = ~/.gitignore_global
   ignorecase = false
   legacyheaders = false
-	pager = delta
+  pager = delta
   precomposeunicode = true
   safecrlf = true
   whitespace = trailing-space,space-before-tab
@@ -58,13 +58,13 @@
   insteadOf = myhub:
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [merge]
-	tool = vscode
+  tool = vscode
 
 [mergetool "vscode"]
-	cmd = "code --wait "
+  cmd = "code --wait "
 
 [grep]
   extendRegexp = true
@@ -74,13 +74,13 @@
   fetchJobs = 4
 
 [interactive]
-	diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-	decorations = true
+  decorations = true
   features = side-by-side line-numbers decorations
-	line-numbers = true
-	syntax-theme = Dracula
+  line-numbers = true
+  syntax-theme = Dracula
   whitespace-error-style = 22 reverse
 
 [delta "decorations"]

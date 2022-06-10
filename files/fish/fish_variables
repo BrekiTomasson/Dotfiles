@@ -18,7 +18,7 @@ SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/brekitomasson/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/brekitomasson/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/Users/brekitomasson\x24
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_brwe:brew
 SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_d:docker
@@ -63,3 +63,5 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/Users/brekitomasson/\x2efig/bin\x1e/Users/brekitomasson/\x2elocal/bin
