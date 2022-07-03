@@ -4,3 +4,4 @@ bat  =>  /Users/brekitomasson/.config/bat
 starship.toml  =>  /Users/brekitomasson/.config/starship.toml
 htop  =>  /Users/brekitomasson/.config/htop
 Scripts  =>  /Users/brekitomasson/Scripts
+karabiner  =>  /Users/brekitomasson/.config/karabiner
