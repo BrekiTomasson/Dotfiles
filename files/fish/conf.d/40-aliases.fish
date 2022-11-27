@@ -1,17 +1,10 @@
-# Common typos and abbreviations
+# Replacing, enhancing, or renaming system functionality.
 alias cls="clear"
-
-# Replacing or enhancing system functionality.
-alias grep  "grep --color=auto"
-alias fgrep "fgrep --color=auto"
 alias egrep "egrep --color=auto"
+alias fgrep "fgrep --color=auto"
+alias grep "grep --color=auto"
 
-# Start the screensaver on macOS.
-if test (uname) = Darwin
-  alias afk 'open -a /System/Library/CoreServices/ScreenSaverEngine.app'
-end
-
-# Fix 'brwe' spelling mistake.
+# Fix that silly little 'brwe' spelling mistake.
 if command -qa brew
   abbr -a brwe brew
 end

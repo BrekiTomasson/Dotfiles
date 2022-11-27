@@ -1,2 +1,2 @@
-# Prompt is handled via Starship, so just init it here.
-starship init fish | source
+# Prompt is provided by oh-my-posh, so all I'm doing here is init.
+oh-my-posh init fish | source

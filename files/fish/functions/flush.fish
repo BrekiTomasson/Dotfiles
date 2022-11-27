@@ -1,4 +1,3 @@
-# Defined in - @ line 1
-function flush --wraps='dscacheutil -flushcache' --description 'alias flush=dscacheutil -flushcache'
-  dscacheutil -flushcache $argv;
+function flush --wraps='dscacheutil -flushcache' --description 'Flushes DNS cache'
+  dscacheutil -flushcache $argv
 end

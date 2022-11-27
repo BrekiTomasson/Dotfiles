@@ -1,24 +1,27 @@
 #!/usr/bin/env fish
 
-echo "Updating ..."
+# @todo Update this file to use quiet and non-interacive modes wherever possible.
+#       "brew outdated" will have to wait until I actually have outdated packages to test.
 
-echo "- Brew"
-# Homebrew
-brew-bump
-brew-cleanup
+echo " - Brew"
+brew update --quiet
+brew outdated | xargs brew fetch --deps --quiet
+brew upgrade --quiet
+brew cleanup -s --quiet
 
-echo "- Fish shell"
+echo " - Fish shell"
 fish_update_completions
 
-echo "- Composer"
-composer self-update
-composer global update
-
-echo "- NPM"
-npm update -g
-
-echo "- Apple Updates"
-/usr/sbin/softwareupdate -ia
-
-echo "- Fisher plugins"
+echo " - Fisher plugins"
 fisher update
+
+echo " - Composer"
+composer self-update --stable --no-cache --quiet
+composer global update --no-interaction --no-cache --quiet
+
+echo " - NPM"
+npm install --global --no-audit --no-fund npm@latest
+npm update --global --no-audit --no-fund
+
+echo " - Apple Updates"
+/usr/sbin/softwareupdate --install --all --agree-to-license

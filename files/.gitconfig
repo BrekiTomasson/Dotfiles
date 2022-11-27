@@ -10,12 +10,6 @@
   required = true
   smudge = git media smudge %f
 
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  process = git-lfs filter-process
-  required = true
-  smudge = git-lfs smudge -- %f
-
 [core]
   autocrlf = input
   compression = -1
@@ -40,6 +34,7 @@
 
 [push]
   default = simple
+  autoSetupRemote = true
 
 [pull]
   default = current
@@ -59,12 +54,6 @@
 
 [credential]
 	helper = osxkeychain
-
-[merge]
-	tool = vscode
-
-[mergetool "vscode"]
-	cmd = "code --wait "
 
 [grep]
   extendRegexp = true

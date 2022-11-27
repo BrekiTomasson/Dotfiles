@@ -1,3 +1,3 @@
 function wip
-  git add . && git commit -m "update" && git push
+  git add . && git commit -m ":construction: work in progress" && git push
 end

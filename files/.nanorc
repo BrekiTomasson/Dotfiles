@@ -72,9 +72,6 @@ unset regexp
 # ... Make the Home key smarter.
 set smarthome
 
-# ... Allow nano to be suspended.
-set suspend
-
 # ... Use a tab size of 2 columns.
 set tabsize 2
 
