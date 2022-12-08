@@ -24,4 +24,4 @@ npm install --global --no-audit --no-fund npm@latest
 npm update --global --no-audit --no-fund
 
 echo " - Apple Updates"
-/usr/sbin/softwareupdate --install --all --agree-to-license
+# /usr/sbin/softwareupdate --install --all --agree-to-license
