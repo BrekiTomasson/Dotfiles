@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# First, delete any offending things that might be stuck.
+rm -rf ~/Library/Application\ Support/CloudDocs
+
+# Then restart the bird process and force it to re-check everything.
+killall bird
+
+# ... that should do it!

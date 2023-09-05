@@ -4,10 +4,10 @@
 #       "brew outdated" will have to wait until I actually have outdated packages to test.
 
 echo " - Brew"
-brew update --quiet
-brew outdated | xargs brew fetch --deps --quiet
-brew upgrade --quiet
-brew cleanup -s --quiet
+/usr/local/bin/brew update --quiet
+/usr/local/bin/brew outdated | xargs brew fetch --deps --quiet
+/usr/local/bin/brew upgrade --quiet
+/usr/local/bin/brew cleanup -s --quiet
 
 echo " - Fish shell"
 fish_update_completions
@@ -15,13 +15,19 @@ fish_update_completions
 echo " - Fisher plugins"
 fisher update
 
+echo " - Minepkg, because why not?"
+/usr/local/bin/minepkg selfupdate
+
 echo " - Composer"
-composer self-update --stable --no-cache --quiet
-composer global update --no-interaction --no-cache --quiet
+/usr/local/bin/composer self-update --stable --no-cache --quiet
+/usr/local/bin/composer global update --no-interaction --no-cache --quiet
 
 echo " - NPM"
-npm install --global --no-audit --no-fund npm@latest
-npm update --global --no-audit --no-fund
+/usr/local/bin/npm install --global --no-audit --no-fund npm@latest
+/usr/local/bin/npm update --global --no-audit --no-fund
 
-echo " - Apple Updates"
+# Disabled for now since this seems to hang at times. Might require sudo to run,
+# might just be buggy. Seems several people online have had similar issues, so I
+# should probably just sit down and Google the issue once and for all.
+# echo " - Apple Updates"
 # /usr/sbin/softwareupdate --install --all --agree-to-license

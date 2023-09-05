@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# If no directory is given, work in local dir
+if [ -d "$1" ] || [ -f "$1" ]; then
+  DIR="$1"
+else
+  echo "No target path given, using working directory '$(pwd)'"
+  DIR="." 
+fi
+
+# Get all the MKV files in this dir and its subdirs
+find "$DIR" -type f -name '*.mkv' -not -path "*srt-only*" | while read filename
+do
+    subs=$(mkvmerge -J "$filename" | jq -r '.tracks[] | select(.type=="subtitles") | select(.codec=="HDMV PGS" | not).id' | tr '\n' ',' | sed 's/,*$//') 
+    if [[ -n $subs ]]
+    then
+         subs="-s $subs"
+    else
+        subs=-S
+    fi
+    echo "> Extracting tracks ${subs#* } from ${filename}"
+    mkvmerge $subs -o "${filename%.mkv}".srt-only.mkv "$filename" > /dev/null 2>&1
+    rm "$filename"
+done
