@@ -10,9 +10,12 @@
 *.swp
 *~
 .DS_Store
-.DS_Store?
 .svn
-.Trash-*
+.MacOSX
+.Trash
+.Trashes
+.Spotlight-V100
+Desktop.ini
 main.tfvars
 Thumbs.db
 
@@ -29,6 +32,13 @@ dump.rdb
 *.idea
 .idea
 .vscode
+
+# Unit test / coverage reports
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
 
 # PHP and NodeJS package installation folders.
 node_modules

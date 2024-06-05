@@ -4,10 +4,10 @@
 
 # Stop asking me for my password.
 switch (uname)
-	case Darwin
-		git config --global credential.helper osxkeychain
-	case '*'
-		git config --global credential.helper cache
+  case Darwin
+	git config --global credential.helper osxkeychain
+  case '*'
+	git config --global credential.helper cache
 end
 
 # And a couple of handy aliases as well.
@@ -17,8 +17,8 @@ alias gitwip='git add . && git commit -m ":construction: work in progress" && gi
 
 # Add completions for gh CLI tool.
 if command -qs gh
-	gh completion -s fish >$HOME/.config/fish/completions/gh.fish
+  gh completion -s fish >$HOME/.config/fish/completions/gh.fish
 
-	abbr -a grv 'gh repo view -w'
-	abbr -a gpv 'gh pr view -w'
+  abbr -a grv 'gh repo view -w'
+  abbr -a gpv 'gh pr view -w'
 end

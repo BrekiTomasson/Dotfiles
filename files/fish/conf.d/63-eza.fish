@@ -5,18 +5,14 @@
 #   defaults.
 # ╰─────────────────────────────────────────────────────────────────────────⋞╯
 
-# Replacing ls with eza if available.
 if command -qa eza
 	alias ls eza
 
 	# Handy, quick and easy "good default".
-	alias l "eza -la --icons"
+	alias l "eza -la --icons --group-directories-first --git"
 
 	# Same as 'l', but without hidden files.
-	alias ll "eza -l --icons"
-
-	# Git-specific listing.
-	alias lg "eza -lah --git --git-ignore"
+	alias ll "eza -l --icons --group-directories-first --git"
 
 	# Convenient tree aliases
 	alias ll2 "ll --tree --level=2"

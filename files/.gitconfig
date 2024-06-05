@@ -11,7 +11,7 @@
 [core]
   autocrlf = input
   eol = lf
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
   ignorecase = false
   legacyheaders = false
 	pager = delta
@@ -19,6 +19,9 @@
   safecrlf = true
   trustctime = false
   whitespace = fix,trailing-space,space-before-tab,cr-at-eol
+
+[apply]
+  whitespace = fix
 
 [advice]
   pushNonFastForward = false
