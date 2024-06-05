@@ -1,7 +1,11 @@
 #!/usr/bin/env fish
 
+# Log the time and date this job runs to a file.
+set current_datetime (date)
+echo $current_datetime >>/Users/brekitomasson/Scripts/update_things-log
+
 # @todo Update this file to use quiet and non-interacive modes wherever possible.
-#       "brew outdated" will have to wait until I actually have outdated packages to test.
+# "brew outdated" will have to wait until I actually have outdated packages to test.
 
 echo " - Brew"
 /usr/local/bin/brew update --quiet

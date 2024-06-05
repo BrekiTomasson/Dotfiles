@@ -7,17 +7,14 @@ SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
+SETUVAR --export HOMEBREW_NO_ENV_HINTS:\x1d
 SETUVAR --export LANG:en_US\x2eUTF\x2d8
 SETUVAR --export LC_CTYPE:en_US\x2eUTF\x2d8
 SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
 SETUVAR --export MAVEN_OPTS:\x2dXmx1024m
 SETUVAR --export PROJECTS:/Users/brekitomasson/Projects
 SETUVAR --export VISUAL:nano
-SETUVAR ZO_CMD:zo
-SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/brekitomasson/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/brekitomasson/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:\x5e/Users/brekitomasson\x24
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_brwe:brew
 SETUVAR _fish_abbr_cat:bat
@@ -50,9 +47,8 @@ SETUVAR _fish_abbr_gw:git\x20switch
 SETUVAR _fish_abbr_gwc:git\x20switch\x20\x2dc
 SETUVAR _fish_abbr_mvnci:mvn\x20clean\x20install
 SETUVAR _fisher_danhper_2F_fish_2D_ssh_2D_agent_files:/Users/brekitomasson/\x2econfig/fish/functions/__ssh_agent_is_started\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/__ssh_agent_start\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/conf\x2ed/fish\x2dssh\x2dagent\x2efish
-SETUVAR _fisher_jethrokuan_2F_z_files:/Users/brekitomasson/\x2econfig/fish/functions/__z\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/__z_add\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/__z_clean\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/__z_complete\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/conf\x2ed/z\x2efish
-SETUVAR _fisher_markcial_2F_upto_files:/Users/brekitomasson/\x2econfig/fish/functions/upto\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/completions/upto\x2efish
-SETUVAR _fisher_plugins:jethrokuan/z\x1edanhper/fish\x2dssh\x2dagent\x1emarkcial/upto
+SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:/Users/brekitomasson/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/Users/brekitomasson/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
+SETUVAR _fisher_plugins:danhper/fish\x2dssh\x2dagent\x1epatrickf1/fzf\x2efish
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red
