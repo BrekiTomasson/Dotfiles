@@ -4,8 +4,5 @@
 # ╰─────────────────────────────────────────────────────────────────────────⋞╯
 
 if command -qs zoxide
-    eval $(zoxide init fish)
+  zoxide init fish | source
 end
-
-# TODO: I should probably create some aliases for zoxide to make it easier to
-#       use on a daily basis.
