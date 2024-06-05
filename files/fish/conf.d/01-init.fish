@@ -5,8 +5,8 @@
 # ╰─────────────────────────────────────────────────────────────────────────⋞╯
 
 ## Set locale and keyboard.
-set -Ux LC_CTYPE en_US.UTF-8
-set -Ux LANG en_US.UTF-8
+set -gx LC_CTYPE en_US.UTF-8
+set -gx LANG en_US.UTF-8
 
 # Set default editor.
 if command -qs nano

@@ -29,7 +29,7 @@ hear, I might implement the change myself or request a pull request.
 Since first creating this repo and the system for maintaining a collection of
 files scattered around the filesystem in a single repository, I have discovered
 a number of alternatives to this, with my favorite by far being
-(chezmoi)[https://www.chezmoi.io/]. 
+(chezmoi)[https://www.chezmoi.io/].
 
 For that reason, I am currently evaluating `chezmoi`, as I am considering
 replacing my current system with it or working out some kind of system that
@@ -41,8 +41,9 @@ proper way forward.
 
 As Dotfiles are a collection of personalized settings, tweaks and adjustments,
 it's only fair to be open and honest about the kinds of things that this repo
-"believes", for lack of a better word. If you disagree with more than one of
-the points below, you might not find much use from the various dotfiles here.
+"believes", for lack of a better word. If you disagree with more than one or
+two of the points below, you might not find much use from the various dotfiles
+in this repository.
 
 - Fish shell is superior to the alternatives.
 - Despite its issues, iTerm2 remains the best macOS terminal emulator.
@@ -53,12 +54,12 @@ the points below, you might not find much use from the various dotfiles here.
   when you don't need it. (Think auto-hiding dock, no icons displayed on the
   desktop, straight-forward terminal prompts, etc.)
 - Often-used commands should be "refactored" into scripts, aliases or
-  functions.
+  functions if a Homebrew package does not exist for it already.
 - There's almost never a good reason to `ls` without the `-l` flag.
 - In most cases, a human-friendly estimate of file sizes is preferable to an
   exact byte count (so `23K`, not `23125`).
 - While `vim`, `emacs`, and all the rest of them have their own set of pros and
-  cons, `nano` is the preferred text editor in a terminal shell.
+  cons, `nano` is probably the best text editor available in a terminal.
 
 ## The Method to the Madness
 
@@ -83,11 +84,10 @@ dotfile repository, a process that will be described further down.
   dotfile repository, for scenarios where a dotfile exists in the repository
   for software that has not been installed previously.
 - [ ] Figure out a good way to include global Composer and NPM packages in the
-  dotfile repository.
+  dotfile repository. A listing is enough, but I don't want to be adding the
+  global `packages.json` file to the repo either...
 - [ ] Explore different ways to use `brew` in a dotfile repository.
 - [ ] Rebuild the `osx` script from scratch to be up to date with the latest
   version of macOS.
 - [ ] Explore the limitation macOS has (had?) regarding symlinked files not
   always working as intended in sandboxed applications.
-- [ ] Separate out the various functions in the `TODO_functions` file into
-  proper Fish function files.

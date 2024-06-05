@@ -3,4 +3,4 @@
 #   do here is initialize it with whatever configuration or options we want. 
 # ╰─────────────────────────────────────────────────────────────────────────⋞╯
 
-oh-my-posh init fish | source
+oh-my-posh init fish --config $(brew --prefix oh-my-posh)/themes/spaceship.omp.json | source

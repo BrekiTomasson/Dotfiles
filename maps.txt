@@ -6,3 +6,5 @@ htop  =>  /Users/brekitomasson/.config/htop
 Scripts  =>  /Users/brekitomasson/Scripts
 karabiner  =>  /Users/brekitomasson/.config/karabiner
 .screenrc  =>  /Users/brekitomasson/.screenrc
+.iterm2_shell_integration.fish  =>  /Users/brekitomasson/.iterm2_shell_integration.fish
+.svtplay-dl.yaml  =>  /Users/brekitomasson/.svtplay-dl.yaml

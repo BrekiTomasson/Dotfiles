@@ -1,24 +1,35 @@
-# OS/System Things etc.
+# ╭⋟─────────────────────────────────────────────────────────────────────────╮
+#   Sensible defaults to ignore in any repository. Indvidual repositoriies
+#   can add additional things to this list, but this should cover all the
+#   basic scenarios you run into.
+# ╰─────────────────────────────────────────────────────────────────────────⋞╯
+
+# Files and folders that the OS uses for various purposes.
+*._*
+*.orig
+*.swp
 *~
-.svn
 .DS_Store
 .DS_Store?
 .svn
-.env
-*._*
-*.phar
-*.cache
-*.swp
-*.orig
-*.idea
-dump.rdb
+.Trash-*
 main.tfvars
 Thumbs.db
 
-# IDE things
+# Random files we probably never want to see.
+dump.rdb
+*.phar
+*.cache
+
+# Things we want to exclude for safety's sake.
+.env
+
+# Folders created by the IDE for various purposes, generally completely
+# useless to include in a repository.
+*.idea
 .idea
 .vscode
 
-# Package managers
+# PHP and NodeJS package installation folders.
 node_modules
 vendor
